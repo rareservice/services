@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Services | Professional Developer</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4452321564991522');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+            --bg-dark: #0a0a0c;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e2e8f0;
+            font-family: 'Plus+Jakarta+Sans', sans-serif;
+            overflow: hidden; /* Prevent scrolling during loader */
+        }
+
+        .mono { font-family: 'JetBrains+Mono', monospace; }
+
+        /* Loader Styles */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .loader-text {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #3b82f6, #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: #1a1a1a;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .loader-progress {
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            box-shadow: 0 0 15px var(--accent-glow);
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px var(--accent-glow);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* Animated Background Gradients */
+        .bg-gradient-animate {
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #0a0a0c 100%);
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            filter: blur(120px);
+            opacity: 0.15;
+            border-radius: 50%;
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* Main Content visibility */
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #content.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Arrow Bounce Animation */
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+        .animate-arrow {
+            animation: arrowBounce 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4452321564991522&ev=PageView&noscript=1"
+    /></noscript>
+
+    <!-- Background -->
+    <div class="bg-gradient-animate"></div>
+    <div class="blob"></div>
+    <div class="blob" style="right: 0; bottom: 0; background: #8b5cf6; animation-delay: -5s;"></div>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-text tracking-tighter">RARE SERVICES</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content" class="max-w-6xl mx-auto px-6 py-12">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-24 fade-in" style="animation-delay: 0.2s;">
+            <div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">R</div>
+                <span>RARE</span>
+            </div>
+            <!-- Navigation removed as requested -->
+        </header>
+
+        <!-- Hero Section -->
+        <section class="text-center mb-32">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight fade-in" style="animation-delay: 0.4s;">
+                Building <span class="text-blue-500 glow-text">Digital</span> <br>Masterpieces.
+            </h1>
+            <p class="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 fade-in" style="animation-delay: 0.6s;">
+                Professional Web Developer, Discord Architect, and Logic Designer. 
+                I turn complex code into seamless user experiences.
+            </p>
+
+            <!-- Centered WhatsApp Button with Arrows -->
+            <div class="flex flex-col items-center gap-4 fade-in" style="animation-delay: 0.8s;">
+                <div class="flex flex-col items-center text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
+                    <span class="mb-1">Click Here Now</span>
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-chevron-down animate-arrow"></i>
+                        <i class="fa-solid fa-chevron-down animate-arrow" style="animation-delay: 0.2s;"></i>
+                        <i class="fa-solid fa-chevron-down animate-arrow" style="animation-delay: 0.4s;"></i>
+                    </div>
+                </div>
+                
+                <a href="https://chat.whatsapp.com/Kk7gu76qJTM2JFJDm3USnI?mode=gi_t" 
+                   target="_blank" 
+                   class="inline-flex items-center gap-4 bg-[#25d366] hover:bg-[#128c7e] text-white px-10 py-5 rounded-full font-extrabold text-lg transition-all transform hover:scale-110 shadow-[0_10px_40px_-10px_rgba(37,211,102,0.6)] group">
+                    <i class="fa-brands fa-whatsapp text-3xl group-hover:rotate-12 transition-transform"></i>
+                    <span>JOIN MY WHATSAPP</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section id="services" class="grid md:grid-cols-3 gap-6 mb-32 fade-in" style="animation-delay: 1s;">
+            <!-- Service 1 -->
+            <div class="glass p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-code text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Web Development</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Custom responsive websites using modern stacks like React, Tailwind, and Node. Optimized for performance and SEO.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="glass p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-500 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                    <i class="fa-brands fa-discord text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Discord Bot Dev</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Advanced automation, economy systems, and custom integration bots for your community with 24/7 uptime.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="glass p-8 rounded-3xl group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-server text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Server Design</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    Professional Discord server architecture, security permissions, and aesthetic layout for elite communities.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Handle Loader logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+            
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    content.classList.add('visible');
+                    document.body.style.overflow = 'auto'; // Re-enable scroll
+                }, 800);
+            }, 5000);
+        });
+
+        // Mouse move effect for background
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.blob');
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            if(blobs[0]) {
+                blobs[0].style.transform = `translate(${mouseX/40}px, ${mouseY/40}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
