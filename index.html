@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code Step 1 -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;
     n=f.fbq=function(){n.callMethod?
@@ -12,10 +11,14 @@
     t.src=v;
     s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s);
-    }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');fbq('init', '4452321564991522');</script>
+    }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4452321564991522');
+    fbq('track', 'PageView'); 
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rare Services - Professional Web Development, Discord Bot Architecture, and Server Design.">
     <title>Rare Services | Professional Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -76,7 +79,7 @@
             width: 0%;
             background: var(--accent);
             box-shadow: 0 0 15px var(--accent-glow);
-            animation: progress 5s linear forwards;
+            animation: progress 2s linear forwards; /* Synced with JS timeout */
         }
 
         @keyframes shine {
@@ -133,6 +136,7 @@
             opacity: 0.15;
             border-radius: 50%;
             z-index: -1;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother movement */
             animation: move 20s infinite alternate;
         }
 
@@ -168,12 +172,10 @@
     src="https://www.facebook.com/tr?id=4452321564991522&ev=PageView&noscript=1"
     /></noscript>
 
-    <!-- Background -->
     <div class="bg-gradient-animate"></div>
     <div class="blob"></div>
     <div class="blob" style="right: 0; bottom: 0; background: #8b5cf6; animation-delay: -5s;"></div>
 
-    <!-- Loader -->
     <div id="loader">
         <div class="loader-text tracking-tighter">RARE SERVICES</div>
         <div class="loader-bar">
@@ -181,10 +183,8 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <div id="content" class="max-w-6xl mx-auto px-6 py-12">
         
-        <!-- Header -->
         <header class="flex justify-between items-center mb-24 fade-in" style="animation-delay: 0.2s;">
             <div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
                 <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">R</div>
@@ -192,7 +192,6 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
         <section class="text-center mb-32">
             <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight fade-in" style="animation-delay: 0.4s;">
                 Building <span class="text-blue-500 glow-text">Digital</span> <br>Masterpieces.
@@ -202,7 +201,6 @@
                 I turn complex code into seamless user experiences.
             </p>
 
-            <!-- Centered WhatsApp Button with Arrows -->
             <div class="flex flex-col items-center gap-4 fade-in" style="animation-delay: 0.8s;">
                 <div class="flex flex-col items-center text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px] mb-2">
                     <span class="mb-1">Click Here Now</span>
@@ -223,9 +221,7 @@
             </div>
         </section>
 
-        <!-- Services Grid -->
         <section id="services" class="grid md:grid-cols-3 gap-6 mb-32 fade-in" style="animation-delay: 1s;">
-            <!-- Service 1 -->
             <div class="glass p-8 rounded-3xl group">
                 <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
                     <i class="fa-solid fa-code text-xl"></i>
@@ -236,7 +232,6 @@
                 </p>
             </div>
 
-            <!-- Service 2 -->
             <div class="glass p-8 rounded-3xl group">
                 <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-500 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition-all">
                     <i class="fa-brands fa-discord text-xl"></i>
@@ -247,7 +242,6 @@
                 </p>
             </div>
 
-            <!-- Service 3 -->
             <div class="glass p-8 rounded-3xl group">
                 <div class="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-500 mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
                     <i class="fa-solid fa-server text-xl"></i>
@@ -261,13 +255,13 @@
 
     </div>
 
-    <!-- Page Scripts -->
     <script>
         // Handle Loader logic
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             const content = document.getElementById('content');
             
+            // 2000ms (2s) matches CSS animation and is better for UX
             setTimeout(() => {
                 loader.style.opacity = '0';
                 setTimeout(() => {
@@ -275,7 +269,7 @@
                     content.classList.add('visible');
                     document.body.style.overflow = 'auto'; // Re-enable scroll
                 }, 800);
-            }, 5000);
+            }, 2000); 
         });
 
         // Mouse move effect for background
@@ -284,19 +278,11 @@
             const mouseX = e.clientX;
             const mouseY = e.clientY;
             
-            if(blobs[0]) {
-                blobs[0].style.transform = `translate(${mouseX/40}px, ${mouseY/40}px)`;
-            }
+            // Loop through ALL blobs so both move
+            blobs.forEach(blob => {
+                blob.style.transform = `translate(${mouseX/40}px, ${mouseY/40}px)`;
+            });
         });
-    </script>
-
-    <!-- Meta Pixel Code Step 2: Track PageView after load -->
-    <script>
-    window.addEventListener('load', function () {
-      if (typeof fbq === 'function') {
-        fbq('track', 'PageView');
-      }
-    });
     </script>
 </body>
 </html>
