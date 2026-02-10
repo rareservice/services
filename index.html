@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Pixel Code Step 1 -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;
+    n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s);
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '4452321564991522');</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rare Services | Professional Developer</title>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4452321564991522');
-    fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -192,7 +190,6 @@
                 <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">R</div>
                 <span>RARE</span>
             </div>
-            <!-- Navigation removed as requested -->
         </header>
 
         <!-- Hero Section -->
@@ -263,6 +260,7 @@
 
     </div>
 
+    <!-- Page Scripts -->
     <script>
         // Handle Loader logic
         window.addEventListener('load', () => {
@@ -289,6 +287,15 @@
                 blobs[0].style.transform = `translate(${mouseX/40}px, ${mouseY/40}px)`;
             }
         });
+    </script>
+
+    <!-- Meta Pixel Code Step 2: Track PageView after load -->
+    <script>
+    window.addEventListener('load', function () {
+      if (typeof fbq === 'function') {
+        fbq('track', 'PageView');
+      }
+    });
     </script>
 </body>
 </html>
